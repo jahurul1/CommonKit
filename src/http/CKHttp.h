@@ -13,8 +13,8 @@
 
 @interface CKHttp : NSObject 
 
-+ (void) setTimeout:(float)timeout;
-+ (float) timeout;
++ (void) setTimeout:(NSTimeInterval)timeout;
++ (NSTimeInterval) timeout;
 + (CKHttpResponse *)sendRequest:(NSMutableURLRequest *)request;
 + (CKHttpResponse *)sendBy:(NSString *)method withBody:(NSData *)body to:(NSString *)path;
 

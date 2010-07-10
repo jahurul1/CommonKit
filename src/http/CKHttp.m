@@ -15,7 +15,7 @@
 
 @implementation CKHttp
 
-static float timeoutInterval = 5.0;
+static NSTimeInterval timeoutInterval = 5.0;
 static NSMutableArray *activeDelegates;
 
 + (NSMutableArray *)activeDelegates {
@@ -26,10 +26,10 @@ static NSMutableArray *activeDelegates;
 	return activeDelegates;
 }
 
-+ (void)setTimeout:(float)timeOut {
++ (void)setTimeout:(NSTimeInterval)timeOut {
 	timeoutInterval = timeOut;
 }
-+ (float)timeout {
++ (NSTimeInterval)timeout {
 	return timeoutInterval;
 }
 
@@ -105,6 +105,7 @@ static NSMutableArray *activeDelegates;
 	}
 	
 	request = [[NSMutableURLRequest alloc] init];
+	[request setTimeoutInterval:[self timeout]];
 	[request setURL:[NSURL URLWithString:urlString]];
 	[request setHTTPMethod:method];
 	[request addValue:[NSString stringWithFormat:@"Basic %@", authString] forHTTPHeaderField:@"Authorization"]; 

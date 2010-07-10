@@ -1,7 +1,11 @@
 require 'sinatra'
 
 get '/get' do
-  "This is a test get."
+  if params["name"]
+    "Hello #{params["name"]}!"
+  else
+    "This is a test get."
+  end
 end
 
 post '/post' do
@@ -14,4 +18,9 @@ end
 
 delete '/delete' do
   "Deleted!"
+end
+
+get '/slow' do
+  sleep 2
+  "Should have timed out!"
 end

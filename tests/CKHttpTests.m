@@ -19,6 +19,11 @@ static NSString *testUrl = @"http://localhost:4567";
 	STAssertTrue([@"This is a test get." isEqual:[response utf8Body]], nil);
 }
 
+- (void) testGetWithParams {
+	CKHttpResponse *response = [CKHttp get:[testUrl stringByAppendingString:@"/get?name=Alan"]];
+	STAssertTrue([@"Hello Alan!" isEqual:[response utf8Body]], nil);
+}
+
 - (void) testPost {
 	CKHttpResponse *response = [CKHttp post:[@"Alan" dataUsingEncoding:NSUTF8StringEncoding] 
 										 to:[testUrl stringByAppendingString:@"/post"]];
@@ -34,6 +39,12 @@ static NSString *testUrl = @"http://localhost:4567";
 - (void) testDelete {
 	CKHttpResponse *response = [CKHttp delete:[testUrl stringByAppendingString:@"/delete"]];
 	STAssertTrue([@"Deleted!" isEqual:[response utf8Body]], nil);
+}
+
+- (void) testRequestTimeout {
+	[CKHttp setTimeout:1];
+	CKHttpResponse *response = [CKHttp get:[testUrl stringByAppendingString:@"/slow"]];
+	STAssertTrue([response isError], @"Didn't time out like it should have.");
 }
 
 @end

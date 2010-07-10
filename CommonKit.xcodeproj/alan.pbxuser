@@ -35,7 +35,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					375,
+					651,
 					60,
 					20,
 					48,
@@ -103,6 +103,12 @@
 			E7D326F211E80CB700ED57F5 /* PBXTextBookmark */ = E7D326F211E80CB700ED57F5 /* PBXTextBookmark */;
 			E7D326F711E80CF700ED57F5 /* PBXTextBookmark */ = E7D326F711E80CF700ED57F5 /* PBXTextBookmark */;
 			E7D326FC11E80D2A00ED57F5 /* PBXTextBookmark */ = E7D326FC11E80D2A00ED57F5 /* PBXTextBookmark */;
+			E7D326FD11E80E3800ED57F5 /* PBXTextBookmark */ = E7D326FD11E80E3800ED57F5 /* PBXTextBookmark */;
+			E7D326FE11E80E4200ED57F5 /* PBXTextBookmark */ = E7D326FE11E80E4200ED57F5 /* PBXTextBookmark */;
+			E7D3270911E810AF00ED57F5 /* PBXTextBookmark */ = E7D3270911E810AF00ED57F5 /* PBXTextBookmark */;
+			E7D3270A11E810AF00ED57F5 /* PBXTextBookmark */ = E7D3270A11E810AF00ED57F5 /* PBXTextBookmark */;
+			E7D3270B11E810AF00ED57F5 /* PBXTextBookmark */ = E7D3270B11E810AF00ED57F5 /* PBXTextBookmark */;
+			E7D3270C11E810AF00ED57F5 /* PBXTextBookmark */ = E7D3270C11E810AF00ED57F5 /* PBXTextBookmark */;
 			E7FC17A711E112CA00E19A64 = E7FC17A711E112CA00E19A64 /* PBXTextBookmark */;
 			E7FC17C011E113D600E19A64 = E7FC17C011E113D600E19A64 /* PBXTextBookmark */;
 			E7FC17D611E1147900E19A64 = E7FC17D611E1147900E19A64 /* PBXTextBookmark */;
@@ -155,16 +161,16 @@
 	};
 	E7C7C98A11E10E38006DF7BF /* CKHttp.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {936, 454}}";
-			sepNavSelRange = "{755, 0}";
-			sepNavVisRange = "{0, 788}";
+			sepNavIntBoundsRect = "{{0, 0}, {869, 429}}";
+			sepNavSelRange = "{450, 0}";
+			sepNavVisRange = "{0, 663}";
 		};
 	};
 	E7C7C98B11E10E38006DF7BF /* CKHttp.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1111, 1885}}";
-			sepNavSelRange = "{2744, 0}";
-			sepNavVisRange = "{3725, 1210}";
+			sepNavIntBoundsRect = "{{0, 0}, {869, 2015}}";
+			sepNavSelRange = "{310, 0}";
+			sepNavVisRange = "{0, 694}";
 		};
 	};
 	E7C7C98C11E10E38006DF7BF /* CKHttpResponse.h */ = {
@@ -407,7 +413,7 @@
 		fRef = E7C7C98A11E10E38006DF7BF /* CKHttp.h */;
 		name = "CKHttp.h: 25";
 		rLen = 0;
-		rLoc = 755;
+		rLoc = 630;
 		rType = 0;
 		vrLen = 788;
 		vrLoc = 0;
@@ -496,7 +502,7 @@
 		fRef = E7C7C98B11E10E38006DF7BF /* CKHttp.m */;
 		name = "CKHttp.m: 92";
 		rLen = 0;
-		rLoc = 2744;
+		rLoc = 2702;
 		rType = 0;
 		vrLen = 1441;
 		vrLoc = 2251;
@@ -605,7 +611,7 @@
 		fRef = E7C7C98B11E10E38006DF7BF /* CKHttp.m */;
 		name = "CKHttp.m: 92";
 		rLen = 0;
-		rLoc = 2744;
+		rLoc = 2702;
 		rType = 0;
 		vrLen = 1210;
 		vrLoc = 3725;
@@ -660,6 +666,66 @@
 		vrLen = 1052;
 		vrLoc = 77;
 	};
+	E7D326FD11E80E3800ED57F5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7FC17B211E1131A00E19A64 /* CKHttpTests.m */;
+		name = "CKHttpTests.m: 29";
+		rLen = 0;
+		rLoc = 770;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 77;
+	};
+	E7D326FE11E80E4200ED57F5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7FC17B211E1131A00E19A64 /* CKHttpTests.m */;
+		name = "CKHttpTests.m: 29";
+		rLen = 0;
+		rLoc = 770;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 77;
+	};
+	E7D3270911E810AF00ED57F5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7FC17B211E1131A00E19A64 /* CKHttpTests.m */;
+		name = "CKHttpTests.m: 20";
+		rLen = 0;
+		rLoc = 472;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 77;
+	};
+	E7D3270A11E810AF00ED57F5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7C7C98B11E10E38006DF7BF /* CKHttp.m */;
+		name = "CKHttp.m: 15";
+		rLen = 0;
+		rLoc = 310;
+		rType = 0;
+		vrLen = 694;
+		vrLoc = 0;
+	};
+	E7D3270B11E810AF00ED57F5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7C7C98A11E10E38006DF7BF /* CKHttp.h */;
+		name = "CKHttp.h: 8";
+		rLen = 0;
+		rLoc = 150;
+		rType = 0;
+		vrLen = 705;
+		vrLoc = 0;
+	};
+	E7D3270C11E810AF00ED57F5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7C7C98A11E10E38006DF7BF /* CKHttp.h */;
+		name = "CKHttp.h: 19";
+		rLen = 0;
+		rLoc = 450;
+		rType = 0;
+		vrLen = 663;
+		vrLoc = 0;
+	};
 	E7FC17A111E112A700E19A64 /* LogicTests */ = {
 		activeExec = 0;
 	};
@@ -683,7 +749,7 @@
 	E7FC17B211E1131A00E19A64 /* CKHttpTests.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {869, 520}}";
-			sepNavSelRange = "{770, 0}";
+			sepNavSelRange = "{472, 0}";
 			sepNavVisRange = "{77, 1052}";
 		};
 	};

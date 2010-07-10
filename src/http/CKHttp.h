@@ -16,12 +16,11 @@
 + (void) setTimeout:(float)timeout;
 + (float) timeout;
 + (CKHttpResponse *)sendRequest:(NSMutableURLRequest *)request;
-+ (CKHttpResponse *)sendBy:(NSString *)method withBody:(NSData *)body to:(NSString *)path withParameters:(NSDictionary *)parameters;
++ (CKHttpResponse *)sendBy:(NSString *)method withBody:(NSData *)body to:(NSString *)path;
 
 + (CKHttpResponse *)post:(NSData *)body to:(NSString *)url;
 + (CKHttpResponse *)put:(NSData *)body to:(NSString *)url;
 + (CKHttpResponse *)get:(NSString *)url;
-+ (CKHttpResponse *)get:(NSString *)url withParameters:(NSDictionary *)parameters;
 + (CKHttpResponse *)delete:(NSString *)url;
 
 @end

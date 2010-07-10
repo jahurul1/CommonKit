@@ -82,7 +82,7 @@ static NSMutableArray *activeDelegates;
 	return resp;
 }
 
-+ (CKHttpResponse *)sendBy:(NSString *)method withBody:(NSData *)body to:(NSString *)path withParameters:(NSDictionary *)parameters {
++ (CKHttpResponse *)sendBy:(NSString *)method withBody:(NSData *)body to:(NSString *)path {
 	NSMutableURLRequest * request;
 	NSURL * url;
 	
@@ -122,23 +122,19 @@ static NSMutableArray *activeDelegates;
 }
 
 + (CKHttpResponse *)post:(NSData *)body to:(NSString *)url {
-	return [self sendBy:@"POST" withBody:body to:url withParameters:nil];
+	return [self sendBy:@"POST" withBody:body to:url];
 }
 
 + (CKHttpResponse *)put:(NSData *)body to:(NSString *)url {
-	return [self sendBy:@"PUT" withBody:body to:url withParameters:nil];
+	return [self sendBy:@"PUT" withBody:body to:url];
 }
 
 + (CKHttpResponse *)get:(NSString *)url {
-	return [self sendBy:@"GET" withBody:nil to:url withParameters:nil];
-}
-
-+ (CKHttpResponse *)get:(NSString *)url withParameters:(NSDictionary *)parameters {
-	return [self sendBy:@"GET" withBody:nil to:url withParameters:parameters];
+	return [self sendBy:@"GET" withBody:nil to:url];
 }
 
 + (CKHttpResponse*)delete:(NSString *)url {
-	return [self sendBy:@"DELETE" withBody:nil to:url withParameters:nil];
+	return [self sendBy:@"DELETE" withBody:nil to:url];
 }
 
 @end

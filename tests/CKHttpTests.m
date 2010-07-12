@@ -6,6 +6,7 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
+#import "CommonKit.h"
 #import "CKHttpTests.h"
 #import "CKHttp.h"
 #import "CKHttpResponse.h"
@@ -45,6 +46,7 @@ static NSString *testUrl = @"http://localhost:4567";
 	[CKHttp setTimeout:1];
 	CKHttpResponse *response = [CKHttp get:[testUrl stringByAppendingString:@"/slow"]];
 	STAssertTrue([response isError], @"Didn't time out like it should have.");
+	[CKHttp setTimeout:5];
 }
 
 - (void) testBasicAuth {
@@ -53,6 +55,14 @@ static NSString *testUrl = @"http://localhost:4567";
 	CKHttpResponse *response = [CKHttp get:[testUrl stringByAppendingString:@"/basicauth"]];
 	STAssertTrue([@"alan => so rad!" isEqual:[response utf8Body]], nil);
 	[CKHttp clearCredentials];
+}
+
+- (void) testSettingContentType {
+	[CKHttp setContentType:@"application/json"];
+	CKHttpResponse *response = [CKHttp get:[testUrl stringByAppendingString:@"/contenttype"]];
+	STAssertEquals(200, [response statusCode], nil);
+	STAssertTrue([@"application/json" isEqual:[response utf8Body]], nil);
+	[CKHttp setContentType:nil];
 }
 
 @end

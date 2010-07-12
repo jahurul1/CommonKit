@@ -20,6 +20,8 @@
 + (void)setPassword:(NSString *)password;
 + (NSString *)password;
 + (void)clearCredentials;
++ (void)setContentType:(NSString *)contentType;
++ (NSString *)contentType;
 	
 + (CKHttpResponse *)sendRequest:(NSMutableURLRequest *)request;
 + (CKHttpResponse *)sendBy:(NSString *)method withBody:(NSData *)body to:(NSString *)path;

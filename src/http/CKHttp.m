@@ -18,6 +18,7 @@
 static NSTimeInterval timeoutInterval = 5.0;
 static NSString *user;
 static NSString *pass;
+static NSString *contentTypeValue;
 static NSMutableArray *activeDelegates;
 
 + (NSMutableArray *)activeDelegates {
@@ -50,6 +51,12 @@ static NSMutableArray *activeDelegates;
 + (void)clearCredentials {
 	user = nil;
 	pass = nil;
+}
++ (void)setContentType:(NSString *)contentType {
+	contentTypeValue = contentType;
+}
++ (NSString *)contentType {
+	return contentTypeValue;
 }
 
 
@@ -135,8 +142,12 @@ static NSMutableArray *activeDelegates;
 	if ([method isEqualToString:@"POST"] || [method isEqualToString:@"PUT"]) {
 		[request setHTTPBody:body];
 		[request setValue:[NSString stringWithFormat:@"%d", [body length]] forHTTPHeaderField:@"Content-Length"];
-        [request setValue:[NSString stringWithFormat:@"application/%@", @"json"] forHTTPHeaderField:@"Content-Type"];
 	}
+	
+	if ([self contentType] != nil) {
+		[request setValue:[self contentType] forHTTPHeaderField:@"Content-Type"];
+	}
+	
 	return [self sendRequest:request];
 }
 

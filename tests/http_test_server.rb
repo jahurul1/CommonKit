@@ -29,3 +29,7 @@ get '/basicauth' do
   auth = Rack::Auth::Basic::Request.new(request.env)
   "#{auth.credentials[0]} => #{auth.credentials[1]}"
 end
+
+get '/contenttype' do
+  request.content_type
+end

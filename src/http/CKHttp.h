@@ -15,6 +15,12 @@
 
 + (void) setTimeout:(NSTimeInterval)timeout;
 + (NSTimeInterval) timeout;
++ (void)setUsername:(NSString *)username;
++ (NSString *)username;
++ (void)setPassword:(NSString *)password;
++ (NSString *)password;
++ (void)clearCredentials;
+	
 + (CKHttpResponse *)sendRequest:(NSMutableURLRequest *)request;
 + (CKHttpResponse *)sendBy:(NSString *)method withBody:(NSData *)body to:(NSString *)path;
 

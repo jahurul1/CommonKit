@@ -24,3 +24,8 @@ get '/slow' do
   sleep 2
   "Should have timed out!"
 end
+
+get '/basicauth' do
+  auth = Rack::Auth::Basic::Request.new(request.env)
+  "#{auth.credentials[0]} => #{auth.credentials[1]}"
+end

@@ -47,4 +47,12 @@ static NSString *testUrl = @"http://localhost:4567";
 	STAssertTrue([response isError], @"Didn't time out like it should have.");
 }
 
+- (void) testBasicAuth {
+	[CKHttp setUsername:@"alan"];
+	[CKHttp setPassword:@"so rad!"];
+	CKHttpResponse *response = [CKHttp get:[testUrl stringByAppendingString:@"/basicauth"]];
+	STAssertTrue([@"alan => so rad!" isEqual:[response utf8Body]], nil);
+	[CKHttp clearCredentials];
+}
+
 @end

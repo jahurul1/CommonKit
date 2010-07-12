@@ -16,6 +16,8 @@
 @implementation CKHttp
 
 static NSTimeInterval timeoutInterval = 5.0;
+static NSString *user;
+static NSString *pass;
 static NSMutableArray *activeDelegates;
 
 + (NSMutableArray *)activeDelegates {
@@ -32,6 +34,24 @@ static NSMutableArray *activeDelegates;
 + (NSTimeInterval)timeout {
 	return timeoutInterval;
 }
+
++ (void)setUsername:(NSString *)username {
+	user = username;
+}
++ (NSString *)username {
+	return user;
+}
++ (void)setPassword:(NSString *)password {
+	pass = password;
+}
++ (NSString *)password {
+	return pass;
+}
++ (void)clearCredentials {
+	user = nil;
+	pass = nil;
+}
+
 
 + (void)logRequest:(NSURLRequest *)request to:(NSString *)url {
 	DLog(@"%@ -> %@", [request HTTPMethod], url);
@@ -88,13 +108,11 @@ static NSMutableArray *activeDelegates;
 	
 	url = [NSURL URLWithString:path];
 	
-	NSString * user = @"";
-	NSString * password = @"";
-	NSString *authString = [[[NSString stringWithFormat:@"%@:%@",user, password] dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
+	NSString *authString = [[[NSString stringWithFormat:@"%@:%@",[self username], [self password]] dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
 	NSString *escapedUser = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
-																				(CFStringRef)user, NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
+																				(CFStringRef)[self username], NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
 	NSString *escapedPassword = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, 
-																					(CFStringRef)password, NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
+																					(CFStringRef)[self password], NULL, (CFStringRef)@"@.:", kCFStringEncodingUTF8);
 	NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@://%@:%@@%@",[url scheme],escapedUser,escapedPassword,[url host],nil];
 	if([url port]) {
 		[urlString appendFormat:@":%@",[url port],nil];
